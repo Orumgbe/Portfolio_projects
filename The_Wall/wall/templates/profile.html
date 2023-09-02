@@ -3,6 +3,13 @@
     <h1>Profile page</h1>
 {% endblock header %}
 {% block main %}
-	{{ current_user.username }}
-	{{ current_user.email }}
+	<p>User ID: {{ current_user.id }}</p>
+	<p>Name: {{ current_user.fname }} {{ current_user.lname }}</p>
+	<p>Username: {{ current_user.username }}</p>
+	<p>Bio: {{ current_user.bio }}</p>
+	<p>Email: {{ current_user.email }}</p>
+	<p>Country: {{ current_user.country }}</p>
+	<p>State: {{ current_user.state }}</p>
+	<p>Preferred language: {{ current_user.pref_lang }}</p>
+	<p>Date Created: {{ current_user.created_at.year }}-{{ current_user.created_at.month }}-{{ current_user.created_at.day }}</p>
 {% endblock main %}
