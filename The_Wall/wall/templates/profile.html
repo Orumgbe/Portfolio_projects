@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+{% block header %}
+    <h1>Profile page</h1>
+{% endblock header %}
+{% block main %}
+	{{ current_user.username }}
+	{{ current_user.email }}
+{% endblock main %}

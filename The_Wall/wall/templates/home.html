@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block header %}
+{% endblock header %}
+{% block main %}
+<main>
+    <div class="articles-outline">
+		<article class="article-box">
+			<a href="{{ url_for('profile') }}">
+				Complete<br>Profile<br>Creation
+			</a>
+		</article>
+		<article class="article-box">
+			<a href="{{ url_for('wall') }}">
+				Visit<br>The<br>Wall
+			</a>
+		</article>
+	</div>
+</main>
+{% endblock main %}

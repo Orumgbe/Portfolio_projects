@@ -1,0 +1,39 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>The Wall</title>
+ 	<link rel="shortcut icon" href="{{ url_for('static', filename='images/wall_icon.png') }}">
+ 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+	<header>
+      	<p>The Wall</p>
+	</header>
+	{% block header %}
+	{% endblock header %}
+	{% block nav %}
+		<input type="checkbox" id="toggle-btn">
+		<label for="toggle-btn" id="toggle-label">&#9776;</label>
+    	<nav class="sidebar">
+        	<ul>
+            	<li><a href="{{ url_for('profile') }}">Profile</a></li>
+	            <li><a href="{{ url_for('chat') }}">Chat</a></li>
+    	        <li><a href="{{ url_for('wall') }}">Visit the wall</a></li>
+        	    <li><a href="{{ url_for('about') }}">About</a></li>
+        	    <li><a href="{{ url_for('contact') }}">Contact us</a></li>
+        	</ul>
+        	<li class="btn"><a href="{{ url_for('logout') }}">Log out</a></li>
+	    </nav>
+	{% endblock nav %}
+	<main>
+		{% block main %}
+		{% endblock main %}
+	</main>
+	<footer>
+		<p>The Wall - Portfolio Project</p>
+	</footer>
+<body>
+</html>

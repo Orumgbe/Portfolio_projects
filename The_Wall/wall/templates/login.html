@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block header %}
+    <h1>login page</h1>
+{% endblock header %}
+{% block nav %}
+{% endblock nav %}
+{% block main %}
+	<form action="" method="POST">
+		{{ form.hidden_tag() }}
+		<fieldset class="form-group">
+            <p class="form-title">Create Account</p>
+			<div class="form-field">
+				{{ form.email.label }}
+				{{ form.email() }}
+			</div>
+			<div class="form-field">
+				{{ form.password.label }}
+				{{ form.password() }}
+			</div>
+			<div class="form-field">
+				{{ form.remember.label }}
+				{{ form.remember() }}
+			</div>
+			{{ form.login() }}
+		</fieldset>
+	</form>
+        <small>
+            Need an account?<a href="{{ url_for('register') }}">Create Account</a>
+        </small>
+{% endblock main  %}
