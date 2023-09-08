@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block header %}
+    <h1>New wall Post</h1>
+{% endblock header %}
+{% block nav %}
+{% endblock nav %}
+{% block main %}
+	<div class="form-content">
+		<form action="" method="POST">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<p class="form-title">Create Post</p>
+				<div class="form-field">
+					{{ form.content.label }}
+					{{ form.content() }}
+				</div>
+				<div class="form-field">
+					{{ form.post(class="btn") }}
+				</div>
+			</fieldset>
+		</form>
+		<small>
+			<a href="{{ url_for('wall') }}">back</a>
+		</small>
+	</div>
+{% endblock main %}

@@ -47,6 +47,13 @@ class Post(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-    def __init__(self, content):
+    def __init__(self, **kwargs):
         """Initializes the post"""
-        self.content = content
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def __repr__(self):
+        """Overwrite Object output"""
+        return "Post made by account with user ID {} on {}"\
+               .format(self.user_id,
+                       self.created_at)

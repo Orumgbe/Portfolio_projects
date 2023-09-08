@@ -26,24 +26,57 @@ body {
 /*Wall page styling*/
 div.wall-container {
 	border: 4px solid maroon;
-	display: flex;
-	flex-wrap: wrap;
-	max-width: 85%;
-	min-height: 75vh;
+	width: 85%;
+	height: 75vh;
 	margin: 5vh;
 	margin-left: 10%;
 	background-color: maroon;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+	display: flex;
 }
 
 article.wall-post {
+	display: inline-block;
+	width: 32%;
+	height: 32%;
 	border: 1px solid #333;
-	border-radius: 3px;
+	border-radius: 4px;
 	margin: 1px;
 	background-color: white;
-	padding: 10px;
-	min-height: 150px;
-	max-height: 30vh;
-	min-width: 50px;
+	padding: 4px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.wall-post-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: inherit;
+}
+
+.wall-post-content > * {
+	text-decoration: none;
+	color: inherit;
+}
+
+.nametag {
+	display: flex;
+	justify-content: flex-end;
+	margin-left: 5px;
+	color: black;
+}
+
+#one, #four, #seven {
+	color: green;
+}
+#two, #five, #eight {
+	color: blue;
+}
+#three, #six, #nine {
+	color: violet;
 }
 
 /* Home page articles style */
@@ -165,7 +198,7 @@ fieldset{
     cursor: pointer;
 }
 
-/* Media query for smaller screens */
+/* Media query for screen */
 @media screen {
 	.sidebar {
 		left: -250px;

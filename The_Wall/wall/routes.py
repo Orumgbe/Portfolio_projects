@@ -3,7 +3,7 @@
 
 from flask import render_template, url_for, redirect, request
 from wall import app, bcrypt, db
-from wall.forms import Register, Login
+from wall.forms import Register, Login, CreatePost
 from wall.models import User, Post
 from flask_login import current_user, login_user, login_required, logout_user
 
@@ -50,7 +50,6 @@ def login():
             user = User.query.filter_by(email=login.email.data).first()
         form_pwd = login.password.data
         if user is not None:
-            print(user.password)
             if bcrypt.check_password_hash(user.password, form_pwd):
                 login_user(user, remember=login.remember.data)
                 page = request.args.get('next')
@@ -77,7 +76,27 @@ def profile():
 @app.route('/the_wall/', strict_slashes=False)
 def wall():
     """This renders the wall page"""
-    return render_template("wall.html")
+    with app.app_context():
+        posts = Post.query.options(db.joinedload(Post.user)).all()
+    idx = ["one", "two", "three", "four", "five", "six",
+           "seven", "eight", "nine"]
+    while len(posts) < 9:
+        posts.append("Write on the wall")
+    zip_posts = zip(posts, idx)
+    return render_template("wall.html", posts=zip_posts)
+
+
+@app.route('/the_wall/new', methods=['GET', 'POST'], strict_slashes=False)
+@login_required
+def newpost():
+    """This renders page to accept new post input"""
+    block = CreatePost()
+    if block.validate_on_submit():
+        post = Post(content=block.content.data, user=current_user)
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('wall'))
+    return render_template("post.html", form=block)
 
 
 @app.route('/chat/', strict_slashes=False)

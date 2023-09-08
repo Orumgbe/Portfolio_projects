@@ -1,8 +1,17 @@
 {% extends 'layout.html' %}
 {% block main %}
 	<div class="wall-container">
-			<article class="wall-post">
-				<p>Wall Posts are here</p>
-			</article>
+		{% for post, id in posts %}
+			{% if post.content %}
+				<article class="wall-post" id={{ id }}>
+					<p class="wall-post-content"><a href="/profile/{{ post.user.username }}">{{ post.content }}</a></p>
+					<small class="nametag">by {{ post.user.username }} that guy</small>
+				</article>
+			{% else %}
+				<article class="wall-post" id={{ id }}>
+					<p class="wall-post-content"><a href="{{ url_for('newpost') }}">{{ post }}</a></p>
+				</article>
+			{% endif %}
+		{% endfor %}
 	</div>
 {% endblock main %}
