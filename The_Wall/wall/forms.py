@@ -28,5 +28,5 @@ class Login(FlaskForm):
 
 class CreatePost(FlaskForm):
     """Class for post creating form"""
-    content = TextAreaField("Enter post", validators=[Length(max=150)])
+    content = TextAreaField("Enter post", validators=[DataRequired(), Length(max=150)], render_kw={'rows': 5, 'cols': 50})
     post = SubmitField('post')

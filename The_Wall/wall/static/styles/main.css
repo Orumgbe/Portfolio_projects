@@ -69,6 +69,17 @@ article.wall-post {
 	color: black;
 }
 
+a.del-btn {
+	text-decoration: none;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: 1px 2px;
+	font-weight: bold;
+	font-size: 14px;
+	color: black;
+	background-color: red;
+}
+
 #one, #four, #seven {
 	color: green;
 }
@@ -121,6 +132,20 @@ footer {
 	width: 100%;
 	bottom: 0;
 	position: fixed;
+}
+
+#add-label {
+ 	position: absolute; 
+	background-color: #3f3f3f;
+	text-decoration: none;
+	color: white;
+	border: 1px solid black;
+	border-radius: 4px;
+ 	bottom: 80px;
+ 	left: 5px;
+	padding: 0px 10px;
+	font-size: 30px;
+    cursor: pointer;
 }
 
 /* Styles for form items */

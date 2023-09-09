@@ -5,7 +5,10 @@
 			{% if post.content %}
 				<article class="wall-post" id={{ id }}>
 					<p class="wall-post-content"><a href="/profile/{{ post.user.username }}">{{ post.content }}</a></p>
-					<small class="nametag">by {{ post.user.username }} that guy</small>
+					<small class="nametag">by {{ post.user.username }}</small>
+					{% if post.user == current_user %}
+						<a class="del-btn" href="{{ url_for('deletePost', post_id=post.id) }}">delete</a>
+					{% endif %}
 				</article>
 			{% else %}
 				<article class="wall-post" id={{ id }}>
@@ -14,4 +17,5 @@
 			{% endif %}
 		{% endfor %}
 	</div>
+	<a id="add-label" href="{{ url_for('newpost') }}">+</a>
 {% endblock main %}

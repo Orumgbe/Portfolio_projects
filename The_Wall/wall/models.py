@@ -43,7 +43,7 @@ class User(db.Model, UserMixin):
 class Post(db.Model):
     """Post model table"""
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    content = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.String(150), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
@@ -54,6 +54,7 @@ class Post(db.Model):
 
     def __repr__(self):
         """Overwrite Object output"""
-        return "Post made by account with user ID {} on {}"\
-               .format(self.user_id,
+        return "Post with ID {} made by account with user ID {} on {}"\
+               .format(self.id,
+                       self.user_id,
                        self.created_at)
