@@ -25,7 +25,8 @@ class User(db.Model, UserMixin):
     state = db.Column(db.String(45), nullable=True)
     pref_lang = db.Column(db.String(20), nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    posts = db.relationship("Post", backref="user", lazy=True)
+    posts = db.relationship("Post", backref="user", lazy=True,
+                            cascade="all, delete-orphan")
 
     def __init__(self, **kwargs):
         """Initializes the user"""

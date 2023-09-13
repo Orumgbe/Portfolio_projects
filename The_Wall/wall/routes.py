@@ -3,7 +3,7 @@
 
 from flask import render_template, url_for, redirect, request
 from wall import app, bcrypt, db
-from wall.forms import Register, Login, CreatePost
+from wall.forms import Register, Login, CreatePost, UpdateProfile
 from wall.models import User, Post
 from flask_login import current_user, login_user, login_required, logout_user
 
@@ -48,6 +48,7 @@ def login():
     if login.validate_on_submit():
         with app.app_context():
             user = User.query.filter_by(email=login.email.data).first()
+        db.session.close()
         form_pwd = login.password.data
         if user is not None:
             if bcrypt.check_password_hash(user.password, form_pwd):
@@ -63,7 +64,7 @@ def login():
 def logout():
     """This logs out user"""
     logout_user()
-    return render_template("logout.html", form=login)
+    return render_template("landing.html", form=login)
 
 
 @app.route('/profile/', strict_slashes=False)
@@ -74,6 +75,8 @@ def profile(username=None):
     if username:
         with app.app_context():
             user = User.query.filter_by(username=username).first()
+        db.session.close()
+
         if user:
             return render_template("profile.html", user=user)
         else:
@@ -82,15 +85,61 @@ def profile(username=None):
         return render_template("profile.html", user=current_user)
 
 
+@app.route('/profile/update', methods=['GET', 'POST'], strict_slashes=False)
+@login_required
+def updateprofile():
+    """This renders the update profile page"""
+    form = UpdateProfile()
+    if form.validate_on_submit():
+        current_user.fname = form.fname.data
+        current_user.lname = form.lname.data
+        current_user.username = form.username.data 
+        current_user.bio = form.bio.data 
+        current_user.email = form.email.data 
+        current_user.country = form.country.data 
+        current_user.state = form.state.data 
+        current_user.pref_lang = form.pref_lang.data 
+        db.session.commit()
+        return redirect(url_for('profile'))
+    elif request.method == 'GET':
+        form.fname.data = current_user.fname
+        form.lname.data = current_user.lname
+        form.username.data = current_user.username
+        form.bio.data = current_user.bio
+        form.email.data = current_user.email
+        form.country.data = current_user.country
+        form.state.data = current_user.state
+        form.pref_lang.data = current_user.pref_lang
+    return render_template("updateprofile.html", user=current_user,
+                           form=form)
+
+
+@app.route('/profile/delete/<int:user_id>', methods=['POST'], strict_slashes=False)
+@login_required
+def deleteprofile(user_id=0):
+    """This deletes and returns to landing page"""
+    if user_id > 0:
+        with app.app_context():
+            user = User.query.get_or_404(user_id)
+            db.session.delete(user)
+            db.session.commit()
+    return redirect(url_for('index'))
+
+
 @app.route('/the_wall/', strict_slashes=False)
 def wall():
     """This renders the wall page"""
     with app.app_context():
-        posts = Post.query.options(db.joinedload(Post.user)).paginate(per_page=9)
+        page = request.args.get('page', 1, type=int)
+        posts = Post.query.options(db.joinedload(Post.user)).paginate(page=page, per_page=9)
+    db.session.close()
+
     idx = ["one", "two", "three", "four", "five", "six",
            "seven", "eight", "nine"]
+    while len(posts.items) < 9:
+        posts.items.append("Write on the wall")
     zip_posts = zip(posts, idx)
-    return render_template("wall.html", posts=zip_posts)
+    return render_template("wall.html", posts=zip_posts, pager=posts)
 
 
 @app.route('/the_wall/new', methods=['GET', 'POST'], strict_slashes=False)

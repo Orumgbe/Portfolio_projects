@@ -1,16 +1,63 @@
-{% extends 'layout.html' %}
-{% block header %}
-{% endblock header %}
-{% block nav %}
-{% endblock nav %}
-{% block main %}
-<main>
-	<h2>Welcome to the Wall</h2>
-		<small>Got an account?
-			<a href="{{ url_for('login') }}">log in</a>
-		</small>
-		<small>Create an account today
-			<a href="{{ url_for('register') }}">sign up</a>
-		</small>
-</main>
-{% endblock main %}
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Wall</title>
+ 	<link rel="shortcut icon" href="{{ url_for('static', filename='images/wall_icon.png') }}">
+ 	<link rel="stylesheet" href="{{ url_for('static', filename='styles/landing.css') }}">
+</head>
+<body>
+	<header>
+		<p class="logotxt">The Wall</p>
+		<div class="logo"><img src="{{ url_for('static', filename='images/wall_icon.png') }}"></img></div>
+		<div class="auth_container">
+			<a class="auth_link" href="{{ url_for('register') }}">sign up</a>
+			<a class="auth_link" href="{{ url_for('login') }}">log in</a>
+		</div>
+		<div class=headerimage></div>
+		<p class="quote">"Write on the wall<br>and maybe someone will read it"</p>
+	</header>
+	<main>
+		<div class="slideleft">
+			<h1>Welcome to the wall</h1>
+		</div>
+		<div class="grid-container">
+		  <div class="text-column">
+		    <p>Leave your story<br>on the wall</p>
+		  </div>
+		  <div class="image-column">
+			<!--add 'max-width: 100%' for image to not exceed width--!>
+		  </div>
+		</div>
+		<p class="between-grids">Tell us about yourself on the wall</p>
+		<div class="grid-container">
+		  <div class="image-column">
+			<!--add 'max-width: 100%' for image to not exceed width--!>
+		  </div>
+		  <div class="text-column">
+		    <p>Visit writer's profile<br>with a click</p>
+		  </div>
+		</div>
+		<p class="intro">Meet the creator</p>
+		<div class="creator">
+			<div class="image"></div>
+			<div class="creator-story-container">
+				<div class="creator-story">
+					My name is Orumgbe Ugbekile.<br>
+					I am a tech enthusiast and, currently, a<br>
+					student at the alx software engineering program.<br><hr>
+					This is my first portfolio project.<br>
+					You can find me with the links below.
+				</div>
+					<a class="creator-link" href="https://github.com/Orumgbe" target="_blank">github</a>
+					<a class="creator-link" href="https://www.linkedin.com/in/orumgbe-ugbekile-066804231" target="_blank">linkedin</a>
+			</div>
+		</div>
+		<a class="backtotop" href="#">back to top</a>
+	</main>
+	<footer>
+		<p>The Wall - Portfolio Project</p>
+	</footer>
+</body>
+</html>

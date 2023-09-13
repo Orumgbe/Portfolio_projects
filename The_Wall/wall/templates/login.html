@@ -1,14 +1,14 @@
 {% extends 'layout.html' %}
-{% block header %}
+{% block subheader %}
     <h1>login page</h1>
-{% endblock header %}
+{% endblock subheader %}
 {% block nav %}
 {% endblock nav %}
 {% block main %}
 	<form action="" method="POST">
 		{{ form.hidden_tag() }}
 		<fieldset class="form-group">
-            <p class="form-title">Create Account</p>
+            <p class="form-title">Sign in</p>
 			<div class="form-field">
 				{{ form.email.label }}
 				{{ form.email() }}

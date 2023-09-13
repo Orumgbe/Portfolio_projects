@@ -1,4 +1,7 @@
 {% extends 'layout.html' %}
+{% block meta %}
+	<meta http-equiv="refresh" content="30">
+{% endblock meta %}
 {% block main %}
 	<div class="wall-container">
 		{% for post, id in posts %}
@@ -18,4 +21,17 @@
 		{% endfor %}
 	</div>
 	<a id="add-label" href="{{ url_for('newpost') }}">+</a>
+	<span class="page-nav-container">
+		{% for page_num in pager.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+			{% if page_num %}
+				{% if pager.page == page_num %}
+					<a class="page-current" href="{{ url_for('wall', page=page_num) }}">{{ page_num }}</a>
+				{% else %}
+					<a class="page-nav" href="{{ url_for('wall', page=page_num) }}">{{ page_num }}</a>
+				{% endif %}
+			{% else %}
+				...
+			{% endif %}
+		{% endfor %}
+	</span>
 {% endblock main %}

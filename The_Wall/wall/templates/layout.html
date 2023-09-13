@@ -3,17 +3,22 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+    {% block meta %}
+    {% endblock meta %}
 	<title>The Wall</title>
  	<link rel="shortcut icon" href="{{ url_for('static', filename='images/wall_icon.png') }}">
  	<link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    {% block link %}
+    {% endblock link %}
 </head>
 <body>
 	<header>
       	<p>The Wall</p>
+		{% block header %}
+		{% endblock header %}
 	</header>
-	{% block header %}
-	{% endblock header %}
+	{% block subheader %}
+	{% endblock subheader %}
 	{% block nav %}
 		<input type="checkbox" id="toggle-btn">
 		<label for="toggle-btn" id="toggle-label">&#9776;</label>
@@ -36,5 +41,7 @@
 		<p>The Wall - Portfolio Project</p>
 	</footer>
 	<script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
-<body>
+    {% block script %}
+	{% endblock script %}
+</body>
 </html>

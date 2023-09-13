@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% block link %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+{% endblock link %}
+{% block nav %}
+{% endblock nav %}
+{% block main %}
+	<div class="update-account-form">
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <p class="form-title">Update Profile</p>
+                <div class="form-field">
+                    {{ form.fname.label }}
+                    {{ form.fname() }}
+                </div>
+                <div class="form-field">
+                    {{ form.lname.label }}
+                    {{ form.lname() }}
+                </div>
+                <div class="form-field">
+                    {{ form.username.label }}
+                    {{ form.username() }}
+                </div>
+                <div class="form-field">
+                    {{ form.bio.label }}
+                    {{ form.bio() }}
+                </div>
+                <div class="form-field">
+                    {{ form.email.label }}
+                    {{ form.email() }}
+                </div>
+                <div class="form-field">
+                    {{ form.country.label }}
+                    {{ form.country() }}
+                </div>
+                <div class="form-field">
+                    {{ form.state.label }}
+                    {{ form.state() }}
+                </div>
+                <div class="form-field">
+                    {{ form.pref_lang.label }}
+                    {{ form.pref_lang() }}
+                </div>
+                <div class="form-field">
+                    {{ form.update(class="btn") }}
+                </div>
+            </fieldset>
+        </form>
+	</div>
+{% endblock main %}
+
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock script %}
