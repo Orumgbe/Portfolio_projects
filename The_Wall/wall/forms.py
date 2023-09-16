@@ -60,7 +60,7 @@ class UpdateProfile(FlaskForm):
     username = StringField('Username:', validators=[DataRequired(),
                            Length(min=2, max=20)])
     email = StringField('Email:', validators=[DataRequired(), Email(), Length(max=100)])
-    bio = TextAreaField('Bio:', render_kw={'rows': 4, 'cols': 40})
+    bio = TextAreaField('Bio:')
     country = StringField('Country:', validators=[Length(max=45)])
     state = StringField('State:', validators=[Length(max=45)])
     pref_lang = StringField('Preferred language:', validators=[Length(max=20)])
