@@ -77,13 +77,20 @@ p.quote {
 	border-radius: 8px;
 }
 
+.navText {
+	padding: 2px 4%;
+	width: 100%;
+	background-image: linear-gradient(to left, white, lightgrey);
+}
+
+/*Text within headerimage section*/
 h2 {
 	padding-top: 20px;
 	padding-left: 20%;
 	line-height: 60px;
 }
 
-h1 {
+.slideIn {
 	margin-left: 5%;
 	color: maroon;
 	animation: slide 6s;
@@ -100,6 +107,17 @@ h1 {
     transform: translateX(-100%);
   }
 
+}
+
+li {
+	list-style-type: square;
+}
+
+li > * {
+	text-decoration: none;
+	color: #333;
+	font-size: 19px;
+	padding: 2px 5%;
 }
 
 .grid-container {
@@ -145,6 +163,11 @@ h1 {
 	font-style: italic;
 	padding: 5px;
 	margin-left: 15%;
+}
+
+.inspiration {
+	padding: 0px 10px 4px;
+	font-style: italic;
 }
 
 .intro {
