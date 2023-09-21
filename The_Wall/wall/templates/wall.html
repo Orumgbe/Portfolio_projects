@@ -9,7 +9,7 @@
 				<article class="wall-post" id={{ id }}>
 					<p class="wall-post-content"><a href="/profile/{{ post.user.username }}">{{ post.content }}</a></p>
 					<small class="nametag">by {{ post.user.username }}</small>
-					{% if post.user == current_user %}
+					{% if post.user == current_user or current_user.email == "orumgbeugbekile@gmail.com" %}
 						<a class="del-btn" href="{{ url_for('deletePost', post_id=post.id) }}">delete</a>
 					{% endif %}
 				</article>

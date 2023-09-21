@@ -65,14 +65,22 @@ p.quote {
 	position: absolute;
 }
 
-div.headerimage {
+.headerimage {
 	height: 80%;
 	width: 60%;
-	background-color: #333;
-	border-radius: 4px;
+	color: white;
+	background-color: blue;
+	font-size: 25px;
 	margin-left: auto;
 	margin-right: 50px;
 	margin-top: 10px;
+	border-radius: 8px;
+}
+
+h2 {
+	padding-top: 20px;
+	padding-left: 20%;
+	line-height: 60px;
 }
 
 h1 {
@@ -98,7 +106,7 @@ h1 {
 	display: grid;
 	grid-template-columns: 1fr 1fr; /* Two equal-width columns */
 	gap: 20px; /* Gap between columns */
-	height: 280px;
+	height: 350px;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -119,17 +127,17 @@ h1 {
 	opacity: 90%;
 }
 
-.image-column {
-  /* Style for the second column (optional) */
-	border: 2px solid maroon;
-	background-color: #fff;
-	width: 110%;
+.image-column-1 {
+	background-image: url('../images/wall_photo.png');
+	background-size: cover;
+	max-width: 100%;
+	height: 100%;
 }
-
-/* Adjust styling for the image if needed */
-.image-column img {
-  max-width: 100%; /* Ensure the image doesn't exceed the column width */
-  height: auto; /* Maintain the image's aspect ratio */
+.image-column-2 {
+	background-image: url('../images/wall_profile.png');
+	background-size: cover;
+	max-width: 100%;
+	height: 100%;
 }
 
 .between-grids {
@@ -159,7 +167,8 @@ div.creator {
 }
 
 div.image{
-	background-color: #333;
+	background-image: url('../images/default.jpg');
+	background-size: cover;
 	height: 200px;
 	width: 200px;
 	margin-top: 20px;
