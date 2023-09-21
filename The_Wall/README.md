@@ -3,6 +3,11 @@ Project name - The Wall
 This is the project I came up with for the portfolio project phase of
 the alx software engineering program.
 
+The wall is a simple web application, designed for devices with a large screen.
+It provides an outlet for expressing oneself. It is quite literally a wall where you can leave behind messages for whoever cares to read it.
+
+The wall is currently being deployed on IP 100.25.188.21. It is advised to not share any sensitive information, although user passwords are encrypted on the backend, since there is no ssl certificate currently on the server. You should use a test password If you choose to explore the we application.
+
 Research and Project approval part 1
 https://docs.google.com/document/d/18fHMRXHqAuORstJIzxHysS7T1hEQ2APaDGaIbJQBPMI/edit?usp=sharing
 
