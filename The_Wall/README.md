@@ -10,11 +10,11 @@ The wall is currently being deployed on IP 100.25.188.21. It is advised to not s
 
 <nav>
 <ul>
-<li><a href="#links"></a></li>
+<li><a href="#links">links</a></li>
 </ul>
 </nav>
 
-<section id="links">
+<div id="links">
 	Research and Project approval part 1
 	https://docs.google.com/document/d/18fHMRXHqAuORstJIzxHysS7T1hEQ2APaDGaIbJQBPMI/edit?usp=sharing
 
@@ -28,6 +28,6 @@ The wall is currently being deployed on IP 100.25.188.21. It is advised to not s
 	https://docs.google.com/document/d/1udT7fwCFvUZMAt3IfiWstZAfTiOEkwQecg4NKbQrGjQ/edit?usp=sharing
 
 	Building (Week 2) MVP Complete
-</section>
+</div>
 
 README file will be updated as the project progresses.
