@@ -23,6 +23,10 @@ It provides an outlet for expressing oneself. It is quite literally a wall where
 
 The wall is currently being deployed on IP 100.25.188.21. It is advised to not share any sensitive information, although user passwords are encrypted on the backend, since there is no ssl certificate currently on the server. You should use a test password If you choose to explore the web application.
  
+	The wall was made possible with the usage of flask and jinja2 template engine. To generate dynamic pages were each post made by the user is linked to the user account. A one to many relationship is created in the database model, before linking each single post made by a user with that particular user id.
+	However to differentiate the user viewing a profile from the actual owner of the profile, flask login manager user loader decorator is used to manage user sessions and store a current user based on his id, which is then used in a conditional using a jinja2 codeblock. To ensure that only the profile owner can edit his profile information.
+	More technical information is shared in the blog post. Links are down below.
+
 <h2 id="links">Links</h2>
 
 - Research and Project approval part 1
