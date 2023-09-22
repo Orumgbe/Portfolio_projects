@@ -1,4 +1,4 @@
-Project name - The Wall
+<h1>Project name - The Wall</h1>
 
 This is the project I came up with for the portfolio project phase of
 the alx software engineering program.
