@@ -25,28 +25,28 @@ The wall is currently being deployed on IP 100.25.188.21. It is advised to not s
  
 <h2 id="links">Links</h2>
 
-    - Research and Project approval part 1
+- Research and Project approval part 1
     https://docs.google.com/document/d/18fHMRXHqAuORstJIzxHysS7T1hEQ2APaDGaIbJQBPMI/edit?usp=sharing
 
-	- Research and Project approval part 2
+- Research and Project approval part 2
 	https://docs.google.com/document/d/1l4lFp9BgNqUj6AveAVXSV7fX2aG-RhNKBebd3yI1Mpk/edit?usp=sharing
 
-	- Research and Project approval part 3
+- Research and Project approval part 3
 	https://trello.com/invite/b/3f96xT7N/ATTIbfb3ca133bd746800869dfbb8e9472ca548D5417/the-wall
 
-	- Building (Week 1) Making Progress
+- Building (Week 1) Making Progress
 	https://docs.google.com/document/d/1udT7fwCFvUZMAt3IfiWstZAfTiOEkwQecg4NKbQrGjQ/edit?usp=sharing
 
-	- Building (Week 2) MVP Complete
+- Building (Week 2) MVP Complete
 	https://docs.google.com/document/d/1EOEpR0gyuP0UFb0Q108gUJu6Ydk-bpWwl4kVP4yOzpI/edit?usp=sharing
 
-	- Connect with the creator on linkedin
+- Connect with the creator on linkedin
 	https://www.linkedin.com/in/orumgbe-ugbekile-066804231
 
-	- Deployed project landing page
+- Deployed project landing page
 	http://100.25.188.21
 
-	- Portfolio Blog Post
+- Portfolio Blog Post
 	https://www.linkedin.com/posts/orumgbe-ugbekile-066804231_flask-activity-7110908456089395200-FuP5?utm_source=share&utm_medium=member_desktop
 
 <h2 id="install">Installation</h2>
@@ -54,7 +54,7 @@ The wall is currently being deployed on IP 100.25.188.21. It is advised to not s
 
 	`git clone https://github.com/Orumgbe/Portfolio_projects.git`
 
-	Extract project "The_Wall" from the directory or navigate to the directory within the repo
+Extract project "The_Wall" from the directory or navigate to the directory within the repo
 	pip install required extensions
 	- flask
 	- flask-bcrypt
@@ -69,8 +69,8 @@ The wall is currently being deployed on IP 100.25.188.21. It is advised to not s
     If you wish to use this locally, you can run it locally
 
 	`python3 app.py`
-
-    That will start the flask development server in debug mode, using an sqlite database to save user profile information and posts.
+    
+That will start the flask development server in debug mode, using an sqlite database to save user profile information and posts.
 
 <h2 id="contribute">Contributing</h2>
 	Reach out to creator on linked for contributions.
