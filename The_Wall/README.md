@@ -54,19 +54,20 @@ The wall is currently being deployed on IP 100.25.188.21. It is advised to not s
 
 	`git clone https://github.com/Orumgbe/Portfolio_projects.git`
 
-Extract project "The_Wall" from the directory or navigate to the directory within the repo
-	pip install required extensions
-	- flask
-	- flask-bcrypt
-	- flask-login
-	- flask-sqlalchemy
-	- flask-wtf
+Extract project "The_Wall" from the directory or navigate to the directory within the repo.<br>
+
+pip install required extensions<br>
+	- flask<br>
+	- flask-bcrypt<br>
+	- flask-login<br>
+	- flask-sqlalchemy<br>
+	- flask-wtf<br>
 
   <b>Ensure you have flask installed before installing the extensions</b>
 
 <h2 id="usage">Usage</h2>
 	You can access this web application to use remotely with the link provided in the links section.
-    If you wish to use this locally, you can run it locally
+    However, if you wish to use this locally, you can run it locally
 
 	`python3 app.py`
     
