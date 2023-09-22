@@ -24,9 +24,6 @@ It provides an outlet for expressing oneself. It is quite literally a wall where
 The wall is currently being deployed on IP 100.25.188.21. It is advised to not share any sensitive information, although user passwords are encrypted on the backend, since there is no ssl certificate currently on the server. You should use a test password If you choose to explore the web application.
  
 <h2 id="links">Links</h2>
-	- Research and Project approval part 1
-	https://docs.google.com/document/d/18fHMRXHqAuORstJIzxHysS7T1hEQ2APaDGaIbJQBPMI/edit?usp=sharing
-
 	- Research and Project approval part 2
 	https://docs.google.com/document/d/1l4lFp9BgNqUj6AveAVXSV7fX2aG-RhNKBebd3yI1Mpk/edit?usp=sharing
 
@@ -48,11 +45,11 @@ The wall is currently being deployed on IP 100.25.188.21. It is advised to not s
 	- Portfolio Blog Post
 	https://www.linkedin.com/posts/orumgbe-ugbekile-066804231_flask-activity-7110908456089395200-FuP5?utm_source=share&utm_medium=member_desktop
 
-<h2 href="#install">Installation</h2>
+<h2 id="install">Installation</h2>
 	Clone the repository
-  <div>
+  <section>
 	git clone https://github.com/Orumgbe/Portfolio_projects.git
-  </div>
+  </section>
 	Extract project "The_Wall" from the directory or navigate to the directory within the repo
 	pip install required extensions
 	- flask
@@ -63,17 +60,17 @@ The wall is currently being deployed on IP 100.25.188.21. It is advised to not s
 
   <b>Ensure you have flask installed before installing the extensions</b>
 
-<h2 href="#usage">Usage</h2>
+<h2 id="usage">Usage</h2>
 	You can access this web application to use remotely with the link provided in the links section.
     If you wish to use this locally, you can run it locally
-  <div>
+  <section>
 	python3 app.py
-  </div>
+  </section>
     That will start the flask development server in debug mode, using an sqlite database to save user profile information and posts.
 
-<h2 href="#contribute">Contributing</h2>
+<h2 id="contribute">Contributing</h2>
 	Reach out to creator on linked for contributions.
-<h2 href="#related">Related projects</h2>
+<h2 id="related">Related projects</h2>
 	As of time of publishing, there is no related project.
-<h2 href="#license">Licensing</h2>
+<h2 id="license">Licensing</h2>
 	No license.
